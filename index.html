@@ -1,0 +1,38 @@
+<!-- HTML goes here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>VICE Frontend Code Test</title>
+	<link rel="stylesheet" href="application.scss">
+</head>
+<body>
+	<h1>vice page</h1>
+
+	<ul class="single-show">
+		
+	</ul>
+
+	<footer id="fixed-bottom">
+		<ul id="shows" class="footer-list"></ul>
+	</footer>
+
+	<script id="showTemplate" type="text/x-handlebars-template">
+		{{#each show}}
+			<li class="show-selector">
+				<div class="thumbnail">
+					<img class="portrait" src="{{image}}">
+				</div>
+			</li>
+
+		{{/each}}
+	</script>
+
+	<!-- JQUERY CDN -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+  <!-- HANDLEBARS TEMPLATING -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <!-- APPLICATION SCRIPT -->
+	<script src="main.js"></script>
+</body>
+</html>

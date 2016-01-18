@@ -1,0 +1,63 @@
+/* SCSS goes here */
+/*------------>> Mobile <<------------*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height: 100%;
+	background: pink;
+}
+
+.show-selector {
+  float: left;
+  display: inline-block;
+
+}
+
+.hidden{
+	display: none;
+}
+
+.thumbnail {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.thumbnail img.portrait {
+  width: 80%;
+  height: 80%;
+}
+
+
+#fixed-bottom{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 100px;
+	width: 100%;
+	background: #141414;
+
+	padding: 30px;
+}
+
+/*------------>> Web <<------------*/
+@media only screen and (min-width: 320px) and (max-width: 980px) {
+		body {
+			background: #F5F5F5;
+		}
+	}
