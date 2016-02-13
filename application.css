@@ -10,9 +10,8 @@ html, body {
 	background: pink;
 }
 
-.hidden {
-	display: none;
-}
+
+
 
 .footer-list:after {
   content: '';

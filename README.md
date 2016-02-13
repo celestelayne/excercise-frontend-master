@@ -16,6 +16,8 @@ In index.html, rebuild the designs in the designs folder in Semantic HTML, CSS, 
 - When landing on the page initially, the first show should be selected.
 
 - When clicking through the show selector, the single show image, title and episode count also updates.
+
+// DONE TO HERE
 - The url updates with the currently selected show. (http://{{page_url}}?id=2, if second show is selected)
 // <div data-url="google.com"></div>
 // var page_url = $("div").attr("data-url");
