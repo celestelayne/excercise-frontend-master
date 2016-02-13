@@ -43,47 +43,59 @@ function getShows(){
 	var thumbnail = document.querySelector('.footer-list');
 	var singleShow = document.querySelector('.single-show');
 
-	var thumbnailPressed;
+	var img = document.createElement('img');
+	var li = document.createElement('li');
+	var p = document.createElement('p');
+
+	var thumbnailPressed, imagePath;
 
 // Events
 // ---------------------------------------------
-	thumbnail.addEventListener('click', functionName);
+	thumbnail.addEventListener('click', toggleShow);
 
 // Event Handler Functions
 // ---------------------------------------------
-	function functionName(event){
-		thumbnailPressed = event.target;
-		console.log(thumbnailPressed);
+	function toggleShow(event){
+		// console.log(event);
+		thumbnailPressed = event.target.src;
+		// returns img
+		imagePath = event.srcElement.attributes.src.value;
+		// var array = imagePath.split("_");
+		console.log(imagePath);
+		console.log(shows);
+		// console.log(array[1]);
+
+
+		// if (imagePath === shows.image){
+		// 	conslole.log("it works");
+		// }
+
+		img.setAttribute('src', thumbnailPressed);
 
 		createImage();
-		// createName();
 	}
 
 	function createImage(item){
 		console.log(shows);
 		// create element
-		var li = document.createElement('li');
-		var bodyText = document.createElement('div');
+
 
 		shows.forEach(function(show){
-			bodyText.innerHTML = show.episode +
+			
+			console.log(show.image);
+			if (imagePath === show.image){
+				console.log("true");
+				p.innerHTML = show.episode +
 			"<br>" + show.title;
+			} else {
+				console.log('false')
+			}
 		});
 
 		// insert clicked image into DOM
-		li.appendChild(thumbnailPressed);
-		li.appendChild(bodyText);
+		li.appendChild(img);
+		li.appendChild(p);
 
-		singleShow.appendChild(li);
-	}
-
-	function createName(item){
-		console.log(shows);
-		// create element
-		var li = document.createElement('li');
-		// style element
-		li.textContent = shows;
-		// insert into the DOM
 		singleShow.appendChild(li);
 	}
 
