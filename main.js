@@ -75,13 +75,15 @@ function getShows(){
 		createImage();
 	}
 
-	function createImage(item){
+	function createImage(){
 		console.log(shows);
 		// create element
 
+		var currentUrl = window.location.href;
+		console.log(currentUrl);
+		li.setAttribute('data', currentUrl);
 
 		shows.forEach(function(show){
-			
 			console.log(show.image);
 			if (imagePath === show.image){
 				console.log("true");
@@ -98,6 +100,8 @@ function getShows(){
 
 		singleShow.appendChild(li);
 	}
+
+
 
 // Handlebars
 // ---------------------------------------------

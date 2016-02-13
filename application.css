@@ -1,5 +1,5 @@
-/* SCSS goes here */
-/*------------>> Mobile <<------------*/
+
+/****************>> Mobile <<****************/
 * {
 	margin: 0;
 	padding: 0;
@@ -8,10 +8,24 @@
 html, body {
 	height: 100%;
 	background: pink;
+	margin: auto;
 }
 
+/****************>> LAYOUT <<****************/
 
+header {
+	width: 100%;
+}
 
+section {
+	width: 100%;
+}
+
+footer {
+	width: 100%;
+}
+
+/*************>> OTHER STYLES <<*************/
 
 .footer-list:after {
   content: '';
@@ -58,7 +72,7 @@ html, body {
 	padding: 30px;
 }
 
-/*------------>> Web <<------------*/
+/****************>> Web <<****************/
 @media only screen and (min-device-width: 320px) and (max-width: 980px) {
 		body {
 			background: #F5F5F5;
