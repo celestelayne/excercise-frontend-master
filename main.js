@@ -1,6 +1,6 @@
 /* JS goes here */
   $(document).ready(function(){
-    console.log('Sanity Check: app.js is working!');
+    console.log('Sanity Check: main.js is working!');
 
     getShows(shows);
 
@@ -29,7 +29,7 @@ function getShows(){
 					title: title
 				});
 			}
-			// console.log(shows);
+			console.log(shows);
 			renderShows(shows);
 		},
 	    error: function(){
@@ -45,12 +45,19 @@ function getShows(){
 
 	var img = document.createElement('img');
 	var li = document.createElement('li');
-	var p = document.createElement('p');
+	var h2 = document.createElement('h2');
+	var h5 = document.createElement('h5');
 
 	var thumbnailPressed, imagePath;
 
-// Events
+// Event Listeners
 // ---------------------------------------------
+	
+	window.addEventListener('popstate', function(event){
+		var state = event.state;
+		console.log(event);
+	});
+
 	thumbnail.addEventListener('click', toggleShow);
 
 // Event Handler Functions
@@ -60,41 +67,40 @@ function getShows(){
 		thumbnailPressed = event.target.src;
 		// returns img
 		imagePath = event.srcElement.attributes.src.value;
-		// var array = imagePath.split("_");
 		console.log(imagePath);
 		console.log(shows);
-		// console.log(array[1]);
-
-
-		// if (imagePath === shows.image){
-		// 	conslole.log("it works");
-		// }
 
 		img.setAttribute('src', thumbnailPressed);
 
 		createImage();
 	}
 
-	function createImage(item){
+	function createImage(){
 		console.log(shows);
-		// create element
+		var currentUrl = window.location.href;
 
+		var page_url = li.setAttribute('data-url', currentUrl);
 
 		shows.forEach(function(show){
-			
-			console.log(show.image);
+			// console.log(show.image);
 			if (imagePath === show.image){
 				console.log("true");
-				p.innerHTML = show.episode +
-			"<br>" + show.title;
+				
+				var episode = show.episode;
+				h5.textContent = episode + ' episodes';
+
+				var title = show.title;
+				h2.textContent = title;
+
 			} else {
-				console.log('false')
+				console.log('false');
 			}
 		});
 
 		// insert clicked image into DOM
 		li.appendChild(img);
-		li.appendChild(p);
+		li.appendChild(h5);
+		li.appendChild(h2);
 
 		singleShow.appendChild(li);
 	}

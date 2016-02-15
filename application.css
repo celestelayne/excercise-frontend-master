@@ -1,5 +1,5 @@
 /* SCSS goes here */
-/*------------>> Mobile <<------------*/
+/*********** MOBILE-FIRST GLOBAL ***********/
 * {
 	margin: 0;
 	padding: 0;
@@ -7,11 +7,46 @@
 
 html, body {
 	height: 100%;
-	background: pink;
+  font-family: 'Source Sans Pro', sans-serif;
+  /*font-family: 'Poppins', sans-serif;*/
+  /*font-family: 'Montserrat', sans-serif;*/
 }
 
+/*********** LAYOUT ***********/
 
+header {
+  width: 100%;
+  background: pink;
+  height: 10%;
+  position: relative;
+}
 
+section {
+  width: 100%;
+  /*background: green;*/
+  height: 75%;
+  position: relative;
+}
+
+li {
+  list-style-type: none;
+}
+
+footer {
+  width: 100%;
+  height: 15%;
+  background: #141414;
+  /*position: relative;*/
+}
+
+/*********** OTHER STYLES ***********/
+
+.footer-list{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .footer-list:after {
   content: '';
@@ -20,8 +55,32 @@ html, body {
 }
 
 .show-selector {
-  // float: left;
   display: inline-block;
+}
+
+.single-show {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.single-show img{
+  width: 100%;
+}
+
+.single-show h2{
+  text-transform: uppercase;
+  color: #141414;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.single-show h5{
+  text-transform: uppercase;
+  color: #ADADAD;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
 
 .thumbnail {
@@ -51,14 +110,9 @@ html, body {
 	position: fixed;
 	left: 0;
 	bottom: 0;
-	height: 100px;
-	width: 100%;
-	background: #141414;
-
-	padding: 30px;
 }
 
-/*------------>> Web <<------------*/
+/*********** MEDIA QUERIES ***********/
 @media only screen and (min-device-width: 320px) and (max-width: 980px) {
 		body {
 			background: #F5F5F5;

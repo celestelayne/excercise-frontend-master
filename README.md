@@ -18,13 +18,16 @@ In index.html, rebuild the designs in the designs folder in Semantic HTML, CSS, 
 - When clicking through the show selector, the single show image, title and episode count also updates.
 
 // DONE TO HERE
-- The url updates with the currently selected show. (http://{{page_url}}?id=2, if second show is selected)
+- The url updates with the currently selected show. (http://{{page_url}}?id=2, if second show is selected) HTML5 History API
 // <div data-url="google.com"></div>
 // var page_url = $("div").attr("data-url");
 // run handlebars
 link as data attribute data-url  (jquery)
+
 - A url with http://{{page_url}}?id=2 should have the second show selected on page reload.
+
 - When clicking between shows, hitting “Back” and “Forward” on the browser will also update the url, cover image, title and episode count according to the show id.
+
 - The minimum width of the screen is 320px. The horizontal breakpoint is at 980px. Built with a mobile first approach.
 
 Pay attention to details and the layout of the page. Keep it DRY.
