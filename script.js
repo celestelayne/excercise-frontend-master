@@ -75,12 +75,12 @@ function getShows(){
   function updateContent(stateObj) {
   	console.log(stateObj);
   // Check to make sure that this state object is not null.
-    if (stateObj) {
-      document.title = stateObj.title;
-      // imageElement.innerHTML = stateObj.
-      titleElement.innerHTML = stateObj.title;
-      episodeElement.innerHTML = stateObj.episodes;
-    }
+
+   this.shows.forEach(function(result){
+      document.title = result.title;
+      titleElement.innerHTML = result.title;
+      episodeElement.innerHTML = result.episode
+    });
   };
 
 	// i think this does not work becasue
@@ -90,23 +90,31 @@ function getShows(){
 		// event.preventDefault();
 		console.log("inside here")
 		var currentURL = location.pathname;
+		console.log(currentURL)
 		var pageData = currentURL.split('.')[0];
 		console.log(pageData)
 			// Fetch the page data using the URL in the link.
 			this.shows.forEach(function(show){
-				var pageURL = show.id;
-				var url = pageData + "?id=" + pageURL;
+				var pageId = show.id;
+				console.log(pageId);
+				var url = pageData + "?id=" + pageId;
 				console.log(url);
+				// Update the page content when the popstate event is called.
+		  	updateContent(url);
+		  	// Create a new history item.
+		  	history.pushState("", "", url)
+
 			});
-		  // Update the page content when the popstate event is called.
-			window.addEventListener('popstate', function(event) {
-				console.log('popstate fired!');
-		  	updateContent(event.state)
-			});
+
 
 		  // Load initial content.
 		  console.log(shows);
 	}
+
+	window.addEventListener('popstate', function(event) {
+		console.log('popstate fired!');
+	 	updateContent(event.state)
+	});
 
 
 
